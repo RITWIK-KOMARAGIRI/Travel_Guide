@@ -10,7 +10,9 @@ mongoose.connect("mongodb://localhost:27017")
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("", (req,res)=>{
 
+});
 app.post("/login", async (req, res) => {
   const { userName, password } = req.body;
 
