@@ -1,0 +1,164 @@
+{
+  "places": [
+    {
+      "id": "2",
+      "placeName": "Munnar",
+      "budget": 12000,
+      "stateName": "Kerala",
+      "timeToComplete": "3-4 days",
+      "website": "https://www.keralatourism.org"
+    },
+    {
+      "id": "3",
+      "placeName": "Jaipur",
+      "budget": 10000,
+      "stateName": "Rajasthan",
+      "timeToComplete": "3 days",
+      "website": "https://www.tourism.rajasthan.gov.in"
+    },
+    {
+      "id": "4",
+      "placeName": "Darjeeling",
+      "budget": 13000,
+      "stateName": "West Bengal",
+      "timeToComplete": "4 days",
+      "website": "https://wbtourism.gov.in"
+    },
+    {
+      "id": "5",
+      "placeName": "Rishikesh",
+      "budget": 8000,
+      "stateName": "Uttarakhand",
+      "timeToComplete": "2-3 days",
+      "website": "https://uttarakhandtourism.gov.in"
+    },
+    {
+      "id": "6",
+      "placeName": "Manali",
+      "budget": 15000,
+      "stateName": "Himachal Pradesh",
+      "timeToComplete": "5 days",
+      "website": "https://himachaltourism.gov.in"
+    },
+    {
+      "id": "7",
+      "placeName": "Goa",
+      "budget": 12000,
+      "stateName": "Goa",
+      "timeToComplete": "4 days",
+      "website": "https://www.goatourism.gov.in"
+    },
+    {
+      "id": "8",
+      "placeName": "Pondicherry",
+      "budget": 9000,
+      "stateName": "Puducherry",
+      "timeToComplete": "3 days",
+      "website": "https://www.py.gov.in"
+    },
+    {
+      "id": "9",
+      "placeName": "Varanasi",
+      "budget": 8000,
+      "stateName": "Uttar Pradesh",
+      "timeToComplete": "3 days",
+      "website": "https://uptourism.gov.in"
+    },
+    {
+      "id": "10",
+      "placeName": "Ooty",
+      "budget": 9500,
+      "stateName": "Tamil Nadu",
+      "timeToComplete": "3 days",
+      "website": "https://www.tamilnadutourism.tn.gov.in"
+    },
+    {
+      "id": "11",
+      "placeName": "Shimla",
+      "budget": 11000,
+      "stateName": "Himachal Pradesh",
+      "timeToComplete": "3-4 days",
+      "website": "https://himachaltourism.gov.in"
+    },
+    {
+      "id": "12",
+      "placeName": "Lonavala",
+      "budget": 7000,
+      "stateName": "Maharashtra",
+      "timeToComplete": "2 days",
+      "website": "https://www.maharashtratourism.gov.in"
+    },
+    {
+      "id": "13",
+      "placeName": "Andaman and Nicobar Islands",
+      "budget": 25000,
+      "stateName": "Andaman & Nicobar",
+      "timeToComplete": "5-6 days",
+      "website": "https://www.andamantourism.gov.in"
+    },
+    {
+      "id": "14",
+      "placeName": "Udaipur",
+      "budget": 10000,
+      "stateName": "Rajasthan",
+      "timeToComplete": "3 days",
+      "website": "https://www.tourism.rajasthan.gov.in"
+    },
+    {
+      "id": "15",
+      "placeName": "Kodaikanal",
+      "budget": 11000,
+      "stateName": "Tamil Nadu",
+      "timeToComplete": "3 days",
+      "website": "https://www.tamilnadutourism.tn.gov.in"
+    },
+    {
+      "id": "16",
+      "placeName": "Coorg",
+      "budget": 10000,
+      "stateName": "Karnataka",
+      "timeToComplete": "3-4 days",
+      "website": "https://karnatakatourism.org"
+    },
+    {
+      "id": "17",
+      "placeName": "Leh-Ladakh",
+      "budget": 30000,
+      "stateName": "Ladakh",
+      "timeToComplete": "7 days",
+      "website": "https://www.ladakhtourism.org"
+    },
+    {
+      "id": "18",
+      "placeName": "Mahabalipuram",
+      "budget": 8500,
+      "stateName": "Tamil Nadu",
+      "timeToComplete": "2 days",
+      "website": "https://www.tamilnadutourism.tn.gov.in"
+    },
+    {
+      "id": "19",
+      "placeName": "Nainital",
+      "budget": 10000,
+      "stateName": "Uttarakhand",
+      "timeToComplete": "3-4 days",
+      "website": "https://uttarakhandtourism.gov.in"
+    },
+    {
+      "id": "20",
+      "placeName": "Hampi",
+      "budget": 9000,
+      "stateName": "Karnataka",
+      "timeToComplete": "3 days",
+      "website": "https://karnatakatourism.org"
+    },
+    {
+      "id": "1269",
+      "stateName": "Kerala",
+      "placeName": "Alleppey",
+      "budget": 5000,
+      "timeToComplete": "2 days",
+      "website": "https://www.keralatourism.org"
+    }
+  ]
+}
