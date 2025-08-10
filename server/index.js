@@ -105,22 +105,37 @@ app.get("/image", async (req, res) => {
 });
 
 app.get("/searched", async (req, res) => {
+  const { place } = req.query;
+
+  if (!place) {
+    return res.status(400).json({ error: "Missing place in query" });
+  }
+
   try {
-    const { place } = req.query;
+    const [hotels, homestays, tovisit, about, emergency] = await Promise.all([
+      hotelsModel.findOne({ place }),
+      homestaysModel.findOne({ place }),
+      tovisitModel.findOne({ place }),
+placeModel.findOne({ placename: { $regex: new RegExp(place, 'i') }}),
+      hospitalModel.findOne({ place })
+    ]);
 
-    if (!place) {
-      return res.status(400).json({ error: "Missing place in query" });
+    // If none found
+    if (!hotels && !homestays && !tovisit && !about && !emergency) {
+      return res.status(404).json({ message: "No data found for this place" });
     }
 
-    const placeWithHotels = await hotelsModel.findOne({ place });
+    res.json({
+      place: place,
+      hotels: hotels?.hotels || [],
+      homestays: homestays?.stays || [],
+      tovisit: tovisit?.tovisit || [],
+      about: about?.about || null,
+      emergency: emergency?.hospitals || []
+    });
 
-    if (!placeWithHotels) {
-      return res.status(404).json({ message: "Place not found" });
-    }
-
-    res.json(placeWithHotels);
-  } catch (err) {
-    console.error("❌ Error in /searched:", err);
+  } catch (error) {
+    console.error("Error in /searched API:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
@@ -181,7 +196,7 @@ app.get("/about", async (req, res) => {
 
     try {
         // Await the result of the findOne operation
-        const aboutplace = await placeModel.findOne({ placename: place }); // Assuming your 'place' field in the DB is actually 'placename'
+        const aboutplace = await placeModel.find({ placename: place }); // Assuming your 'place' field in the DB is actually 'placename'
 
         if (!aboutplace) {
             // Handle case where no document is found for the given place
@@ -229,8 +244,7 @@ app.get("/emergency", async (req, res) => {
     const {name} =req.query
     if(!name){
       console.error("No name sent from frontend")
-    }
-    const profile = await profileModel.findOne({name});
+    }    const profile = await profileModel.findOne({name});
     res.json(profile)
 
   })

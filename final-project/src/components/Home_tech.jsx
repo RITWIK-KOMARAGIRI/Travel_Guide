@@ -17,7 +17,6 @@ const Home = () => {
     try {
       const res = await axios.post("http://localhost:5000/login", form); // ✅ Replace with your actual backend endpoint
       setData(res.data);
-      alert("Login successful!");
       localStorage.setItem('user', JSON.stringify(res.data));
 
       navigate("/login", { state: { name : res.data.name  } })
