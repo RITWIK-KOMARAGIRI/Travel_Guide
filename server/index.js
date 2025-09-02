@@ -8,7 +8,9 @@ mongoose.connect("mongodb+srv://Ritwik:Ritwik123@cluster0.3leb3ro.mongodb.net/?r
   .catch((err) => console.error("MongoDB connection error:", err));
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://RITWIK-KOMARAGIRI.github.io"
+}));
 app.use(express.json());
 app.get("", (req,res)=>{
 
