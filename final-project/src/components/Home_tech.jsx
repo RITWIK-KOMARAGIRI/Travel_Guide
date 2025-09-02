@@ -15,7 +15,7 @@ const Home = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/login", form); // ✅ Replace with your actual backend endpoint
+      const res = await axios.post("https://travel-guide-2mci.onrender.com/login", form); // ✅ Replace with your actual backend endpoint
       setData(res.data);
       localStorage.setItem('user', JSON.stringify(res.data));
 

@@ -16,7 +16,7 @@ const Searched = () => {
   useEffect(() => {
     const fetchPlace = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/searched?place=${placeName}`);
+        const res = await axios.get(`https://travel-guide-2mci.onrender.com/searched?place=${placeName}`);
         setPlaceData(res.data);
       } catch (error) {
         console.error("Error fetching main place data (hotels):", error);
@@ -33,7 +33,7 @@ const Searched = () => {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/image?place=${placeName}`);
+        const res = await axios.get(`https://travel-guide-2mci.onrender.com/image?place=${placeName}`);
         setImage(res.data[0]?.img || 'https://via.placeholder.com/150?text=No+Image');
       } catch (err) {
         console.error("Failed to fetch image:", err);
@@ -50,7 +50,7 @@ const Searched = () => {
   useEffect(() => {
     const fetchHomeStays = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/homeStays?place=${placeName}`);
+        const res = await axios.get(`https://travel-guide-2mci.onrender.com/homeStays?place=${placeName}`);
         sethomeStay(res.data);
       } catch (err) {
         console.log("No home stays available:", err);
@@ -67,7 +67,7 @@ const Searched = () => {
   useEffect(() => {
     const fetchnearby = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/nearBY?place=${placeName}`);
+        const res = await axios.get(`https://travel-guide-2mci.onrender.com/nearBY?place=${placeName}`);
         settovisit(res.data);
       } catch (err) {
         console.error("No nearby places found or error fetching:", err);
@@ -87,7 +87,7 @@ const Searched = () => {
   useEffect(() => {
     const fetchHospitals = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/emergency?place=${placeName}`);
+        const res = await axios.get(`https://travel-guide-2mci.onrender.com/emergency?place=${placeName}`);
         setemergency(res.data); // This will now be an array of strings
       } catch (err) {
         console.error("No hospitals found or error fetching:", err);

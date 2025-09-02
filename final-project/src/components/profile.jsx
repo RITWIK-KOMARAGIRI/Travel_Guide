@@ -10,7 +10,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/profile?name=${name}`);
+        const res = await axios.get(`https://travel-guide-2mci.onrender.com/profile?name=${name}`);
         setData(res.data);
       } catch (err) {
         console.error("Failed to fetch profile:", err);

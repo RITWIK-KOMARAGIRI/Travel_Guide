@@ -24,7 +24,7 @@
       }
 
       try {
-        const response = await axios.post("http://localhost:5000/register", {
+        const response = await axios.post("https://travel-guide-2mci.onrender.com/register", {
           id:form.id,
           name: form.name,
           userName: form.userName,

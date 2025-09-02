@@ -49,7 +49,7 @@ const username = location.state?.name;
   useEffect(() => {
     const fetchTopRated = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/toprated");
+        const res = await axios.get("https://travel-guide-2mci.onrender.com/toprated");
         setTopRatedPlaces(res.data);
       } catch (err) {
         console.error("Failed to fetch top-rated places:", err);
