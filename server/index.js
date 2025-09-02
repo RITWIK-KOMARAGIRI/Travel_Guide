@@ -253,6 +253,7 @@ app.get("/emergency", async (req, res) => {
     const profile = new profileModel({name,username:userName,email});
      await profile.save();
   })
-app.listen(5000, () => {
+  const port = process.env.port || 5000;
+app.listen(port, () => {
   console.log(`Server running at http://localhost:5000`);
 });
