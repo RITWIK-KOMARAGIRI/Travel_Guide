@@ -7,7 +7,7 @@ import Searched from './components/searched'
 import Profile from './components/profile'
 const App = () => {
   return (
-    <HashRouter >
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />}/>
