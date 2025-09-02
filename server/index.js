@@ -3,7 +3,7 @@ const cors = require("cors");
 const { loginModel, profileModel, topratedModel, aboutModel, placeModel, hotelsModel, homestaysModel, tovisitModel, hospitalModel } = require('./table/schema');
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017")
+mongoose.connect("mongodb+srv://Ritwik:Ritwik123@cluster0.3leb3ro.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
