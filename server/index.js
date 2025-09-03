@@ -9,7 +9,7 @@ mongoose.connect("mongodb+srv://Ritwik:Ritwik123@cluster0.3leb3ro.mongodb.net/?r
 
 const app = express();
 app.use(cors({
-  origin: "https://ritwik-komaragiri.github.io"
+  origin: "https://travel-guide-2mci.onrender.com"
 }));
 app.use(express.json());
 app.get("", (req,res)=>{
