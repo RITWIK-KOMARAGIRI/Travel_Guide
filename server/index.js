@@ -9,8 +9,14 @@ mongoose.connect("mongodb+srv://Ritwik:Ritwik123@cluster0.3leb3ro.mongodb.net/?r
 
 const app = express();
 app.use(cors({
-  origin: "https://travel-guide-2mci.onrender.com"
+  origin: [
+    "http://localhost:5173",
+    "https://ritwik-komaragiri.github.io"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
+
 app.use(express.json());
 app.get("", (req,res)=>{
 
@@ -255,7 +261,7 @@ app.get("/emergency", async (req, res) => {
     const profile = new profileModel({name,username:userName,email});
      await profile.save();
   })
-  const port = process.env.port || 5000;
-app.listen(port, () => {
+  const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
   console.log(`Server running at http://localhost:5000`);
 });
