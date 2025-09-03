@@ -42,7 +42,7 @@
     
    const setdata = async () => {
   try {
-    const response = await axios.post("http://localhost:5000/add/profile", {
+    const response = await axios.post("https://travel-guide-2mci.onrender.com/add/profile", {
       name: form.name,
       userName: form.userName,
       email: form.email,
