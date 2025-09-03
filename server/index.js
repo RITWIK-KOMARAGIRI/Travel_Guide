@@ -10,12 +10,13 @@ mongoose.connect("mongodb+srv://Ritwik:Ritwik123@cluster0.3leb3ro.mongodb.net/?r
 const app = express();
 app.use(cors({
   origin: [
-    "http://localhost:5173",
-    "https://ritwik-komaragiri.github.io"
+    "http://localhost:5173",              // local dev
+    "https://ritwik-komaragiri.github.io" // GitHub Pages frontend
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
 
 app.use(express.json());
 app.get("", (req,res)=>{
