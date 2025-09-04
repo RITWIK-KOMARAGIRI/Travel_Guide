@@ -5,6 +5,8 @@ import Register from './components/register_form'
 import Login from './components/login'
 import Searched from './components/searched'
 import Profile from './components/profile'
+import MockPayment from './components/payment';
+import Details from './components/details';
 const App = () => {
   return (
     <HashRouter>
@@ -14,6 +16,9 @@ const App = () => {
         <Route path="/login" element={<Login />}/>
         <Route path='/searched' element={< Searched />}/>
         <Route path='/profile' element={<Profile />}/>
+<Route path="/payment" element={<MockPayment />} />
+<Route path="/details" element={<Details />} />
+
       </Routes>
     </HashRouter>
   );

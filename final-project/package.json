@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-   "homepage": "https://RITWIK-KOMARAGIRI.github.io/Travel_Guide",
+  "homepage": "https://RITWIK-KOMARAGIRI.github.io/Travel_Guide",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,10 +11,10 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
-  
   },
   "dependencies": {
     "axios": "^1.10.0",
+    "lucide-react": "^0.542.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3"

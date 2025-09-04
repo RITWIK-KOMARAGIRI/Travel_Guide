@@ -13,8 +13,8 @@ const Login = () => {
   const [name,setname] = useState('');
 const location = useLocation();
 const username = location.state?.name; 
-
-
+const now = new Date();
+const monthName = now.toLocaleString("default", { month: "long" });
 
 
   const handleLogout = () => {
