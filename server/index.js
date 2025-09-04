@@ -22,6 +22,97 @@ app.use(express.json());
 app.get("", (req,res)=>{
 
 });
+app.get("/details", async (req, res) => {
+  try {
+    const { name, type, stayName } = req.query;
+
+    if (!name || !type) {
+      return res.status(400).json({ message: "Name and type are required" });
+    }
+
+    const normalizedType = type.toLowerCase();
+    let data;
+
+    // 🏡 Homestay
+    if (normalizedType === "homestay" || normalizedType === "homestays") {
+      if (!stayName) {
+        return res.status(400).json({ message: "stayName is required for homestay type" });
+      }
+
+      const placeData = await homestaysModel.findOne(
+        { place: new RegExp(`^${name}$`, "i") },
+        { stays: 1 }
+      );
+
+      if (!placeData || !placeData.stays) {
+        return res.status(404).json({ message: "Place not found or has no stays" });
+      }
+
+      const stay = placeData.stays.find(
+        (s) => s.name.toLowerCase() === stayName.toLowerCase()
+      );
+
+      if (!stay) {
+        return res.status(404).json({ message: "Stay not found" });
+      }
+
+      data = stay;
+    }
+
+    // 🏨 Hotel
+    else if (normalizedType === "hotel" || normalizedType === "hotels") {
+      if (!stayName) {
+        return res.status(400).json({ message: "stayName is required for hotel type" });
+      }
+
+      const placeData = await hotelsModel.findOne(
+        { place: new RegExp(`^${name}$`, "i") },
+        { hotels: 1 }
+      );
+      if (!placeData) {
+        return res.status(404).json({ message: "Place not found" });
+      }
+
+      const hotel = placeData.hotels.find(
+        (h) => h.name.toLowerCase() === stayName.toLowerCase()
+      );
+      if (!hotel) {
+        return res.status(404).json({ message: "Hotel not found" });
+      }
+
+      data = hotel;
+    }
+
+    // 🗺️ ToVisit
+    else if (normalizedType === "tovisit" || normalizedType === "to-visit") {
+      const placeData = await tovisitModel.findOne(
+        { place: new RegExp(`^${name}$`, "i") }
+      );
+      if (!placeData) {
+        return res.status(404).json({ message: "Place to visit not found" });
+      }
+
+      // return only the places array if that’s how your schema is structured
+      data = placeData.places || placeData;
+    }
+
+    // ❌ Invalid type
+    else {
+      return res.status(400).json({ message: "Invalid type" });
+    }
+
+    res.json(data);
+  } catch (err) {
+    console.error("Error in /details:", err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+
+
+
+ 
+
 app.post("/login", async (req, res) => {
   const { userName, password } = req.body;
 

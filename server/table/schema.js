@@ -53,7 +53,10 @@ const homestays = new mongoose.Schema({
         {
             name:String,
             rating:Number,
-            budget:Number
+            budget:Number,
+            details:String,
+            availability:String,
+            img:String
         }
     ]
 });
