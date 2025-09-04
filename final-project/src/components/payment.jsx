@@ -153,7 +153,7 @@ export default function Payment() {
             <p className="text-gray-600 mt-2">Transaction ID: #{Date.now()}</p>
             <p className="text-sm mt-2">Thank you for booking with us 🙌</p>
             <button
-            onClick={()=>{navigate('/')} } 
+            onClick={()=>{navigate('/login')} } 
             className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
           >
             Back to Home
